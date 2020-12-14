@@ -74,6 +74,8 @@ class RegisterController extends Controller
 
     public function confirmRegistration(Request $request)
     {
+        $this->validator($request->all())->validate();
+
         $data = [
             'name' => $request->name,
             'email' => $request->email,
